@@ -1,0 +1,301 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            :root {
+                --note-dark-background:darkslategray;
+                --note-highlight-background:orange;
+                --fretboard-border: rgb(100,100,100);
+                --fretboard-highlight: rgb(60,60,60);
+                --fretboard-fet: rgb(200,200,200);
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            h1 {
+                color: white;
+            }
+    
+            .fretboard {
+                border: 1px solid;
+                border-color: var(--fretboard-border);
+                display: inline-block;
+            }
+    
+            .string {
+                position: relative;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                font-size: 0;
+            }
+    
+            .string::before {
+                position: absolute;
+                left: -1.5rem;
+                width: 2rem;
+                max-width: 2rem;
+                display: inline-block;
+                color: white;
+                content: attr(data-name);
+                font-size: 1rem;
+            }
+    
+            .string::after {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                display: inline-block;
+                border-bottom: 2px solid white;
+                font-size: 1px;
+                content: ' ';
+                height: 0.6rem;
+                box-sizing: border-box;
+            }
+    
+            .string > li {
+                border-right: 0.15rem solid;
+                border-right-color: var(--fretboard-fet);
+                display: inline-block;
+                margin: 0;
+                padding: 0;
+                width: 6rem;
+                max-width: 6rem;
+                min-width: 6rem;
+                font-size: 1rem;
+            }
+
+            .string > li:nth-child(3) {
+                background-color: var(--fretboard-highlight);
+            }
+
+            .string > li:nth-child(5) {
+                background-color: var(--fretboard-highlight);
+            }
+
+            .string > li:nth-child(7) {
+                background-color: var(--fretboard-highlight);
+            }
+
+            .string > li:nth-child(9) {
+                background-color: var(--fretboard-highlight);
+            }
+
+            .string > li:nth-child(12) {
+                background-color: var(--fretboard-highlight);
+            }
+
+            .string > li::before {
+                content: attr(data-name);
+                display: inline-block;
+                width: 2rem;
+                border-radius: 50%;
+                background-color: var(--note-dark-background);    
+                position: relative;
+                color: black;
+                font-weight: bolder;
+                top: 0;
+                left: 33%;
+                z-index: 1000;
+                text-align: center;
+            }
+    
+            .string > li[data-highlight=true]::before {
+                background-color: var(--note-highlight-background);    
+            }
+        
+            body {
+                margin: 3rem;
+                background: black;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .buttonbar {
+                padding-top: 2rem;
+            }
+
+            .buttonbar > div {
+                margin-bottom: 1rem;
+            }
+
+            button {
+                box-shadow: 0px 1px 0px 0px #1c1b18;
+                background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+                background-color:#eae0c2;
+                border-radius:15px;
+                border:2px solid #333029;
+                display:inline-block;
+                cursor:pointer;
+                color:#505739;
+                font-family:Arial;
+                font-size:14px;
+                font-weight:bold;
+                padding:12px 16px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #ffffff;
+            }
+
+            button:hover {
+                background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+                background-color:#ccc2a6;
+            }
+
+            button:active {
+                position:relative;
+                top:1px;
+            }
+        </style>        
+    </head>
+    <body>
+        <h1>Notes on the Fretboard</h1>
+        <div class="fretboard">
+            <ol class="string" data-name="e">
+                <li data-name="F" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="G" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="A" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="B" data-highlight="false">&nbsp;</li>
+                <li data-name="C" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="D" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="E" data-highlight="false">&nbsp;</li>
+            </ol>
+            <ol class="string" data-name="b">
+                <li data-name="C" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="D" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="E" data-highlight="false">&nbsp;</li>
+                <li data-name="F" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="G" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="A" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="B" data-highlight="false">&nbsp;</li>
+            </ol>
+            <ol class="string" data-name="g">
+                <li>&nbsp;</li>
+                <li data-name="A" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="B" data-highlight="false">&nbsp;</li>
+                <li data-name="C" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="D" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="E" data-highlight="false">&nbsp;</li>
+                <li data-name="F" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="G" data-highlight="false">&nbsp;</li>
+            </ol>
+            <ol class="string" data-name="D">
+                <li>&nbsp;</li>
+                <li data-name="E" data-highlight="false">&nbsp;</li>
+                <li data-name="F" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="G" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="A" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="B" data-highlight="false">&nbsp;</li>
+                <li data-name="C" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="D" data-highlight="false">&nbsp;</li>
+            </ol>
+            <ol class="string" data-name="A">
+                <li>&nbsp;</li>
+                <li data-name="B" data-highlight="false">&nbsp;</li>
+                <li data-name="C" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="D" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="E" data-highlight="false">&nbsp;</li>
+                <li data-name="F" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="G" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="A" data-highlight="false">&nbsp;</li>
+            </ol>
+            <ol class="string" data-name="E">
+                <li data-name="F" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="G" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="A" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="B" data-highlight="false">&nbsp;</li>
+                <li data-name="C" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="D" data-highlight="false">&nbsp;</li>
+                <li>&nbsp;</li>
+                <li data-name="E" data-highlight="false">&nbsp;</li>
+            </ol>
+         </div>    
+         <div class="buttonbar">
+             <div>
+                 <button onclick="fretboard.removeHighlights()">Clear highlights</button>
+                 <button onclick="fretboard.CToG2nd()">C-G 2nd. Position</button>
+                 <button onclick="fretboard.CToG4th()">C-G 4th. Position</button>
+                 <button onclick="fretboard.CToG7th()">C-G 7th. Position</button>
+            </div>                 
+            <div>
+                <button onclick="fretboard.highlightNotes('C')">All C</button>
+                <button onclick="fretboard.highlightNotes('D')">All D</button>
+                <button onclick="fretboard.highlightNotes('E')">All E</button>
+                <button onclick="fretboard.highlightNotes('F')">All F</button>
+                <button onclick="fretboard.highlightNotes('G')">All G</button>
+                <button onclick="fretboard.highlightNotes('A')">All A</button>
+                <button onclick="fretboard.highlightNotes('B')">All B</button>
+            </div>
+         </div>
+         <script>
+             const fretboard = {
+                removeHighlights: function() {
+                    document.querySelectorAll('.string > li[data-name]').forEach(function(item) {
+                        item.dataset.highlight='false';
+                    });
+                    return this;
+                }, 
+                highlightElement: function(element) {
+                    element.dataset.highlight='true';
+                },
+                highlightNotes: function(note) {
+                    const hl = this.highlightElement;
+                    document.querySelectorAll('.string > li[data-name=' + note + ']').forEach(hl);
+                    return this;
+                },
+                highlightSingleNote: function(str, fret) {
+                    const hl = this.highlightElement;
+                    document.querySelectorAll('.string[data-name=' + str + '] > li:nth-child(' + fret + ')').forEach(hl);
+                    return this;
+                },
+                CToG2nd: function() {
+                    return this.highlightSingleNote('A', 3)
+                        .highlightSingleNote('A', 5)
+                        .highlightSingleNote('D', 2)
+                        .highlightSingleNote('D', 3)
+                        .highlightSingleNote('D', 5);
+                },
+                CToG4th: function() {
+                    return this.highlightSingleNote('g', 5)
+                        .highlightSingleNote('g', 7)
+                        .highlightSingleNote('b', 5)
+                        .highlightSingleNote('b', 6)
+                        .highlightSingleNote('b', 8);
+                },
+                CToG7th: function() {
+                    return this.highlightSingleNote('E', 8)
+                        .highlightSingleNote('E', 10)
+                        .highlightSingleNote('A', 7)
+                        .highlightSingleNote('A', 8)
+                        .highlightSingleNote('A', 10);
+                }
+             };
+         </script>
+    </body>
+</html>
